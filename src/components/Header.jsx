@@ -3,7 +3,7 @@ import MenuBookIcon from '@material-ui/icons/MenuBook';
 
 function Header() {
     return <header>
-        <h1 class="pushed"><MenuBookIcon/> Memo</h1>
+        <h1 className="pushed"><MenuBookIcon/> Memo</h1>
     </header>
     ;
 }

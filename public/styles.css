@@ -108,3 +108,7 @@ form.create-note button {
 .pushed{
   padding-left: 10px;
 }
+
+.fab-button:hover {
+  background-color: orange;
+}

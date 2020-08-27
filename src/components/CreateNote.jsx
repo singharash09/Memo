@@ -1,7 +1,13 @@
 import React, { useState } from "react";
+import AddIcon from '@material-ui/icons/Add';
+import Fab from '@material-ui/core/Fab';
+import Zoom from '@material-ui/core/Zoom';
 
 //This is the area where the user inputs a new note 
 function CreateNote(props) {
+
+    //hook for expanding the textarea for animation
+    const [isExpanded, setExpanded] = useState(false);
 
     //stateful JSON object newNote (using hooks) to dynamically change value in HTML
     const [newNote, setNewNote] = useState({
@@ -26,13 +32,33 @@ function CreateNote(props) {
         }
     })
 }
+  //function to expand the textarea
+   function expand() {
+       setExpanded(true);
+   }
     
      return (
         <div>
             <form className="create-note">
-                <input name="title" onChange={handleChange} value={newNote.title} placeholder="Title"/>
-                <textarea name="content" onChange={handleChange} value={newNote.content} placeholder="Write a description..." rows="3"/>
-                <button onClick={submitNote}>+</button>
+               {isExpanded ? <input 
+                name="title" 
+                onChange={handleChange} 
+                value={newNote.title} 
+                placeholder="Title"
+                /> : null
+                } 
+                <textarea
+                 name="content"
+                 onClick={expand}
+                 onChange={handleChange}
+                 value={newNote.content} 
+                 placeholder="Note something..." 
+                 rows={isExpanded ? 3 : 1}                 
+                 />
+
+                <Zoom in={isExpanded ? true : false}>
+                <Fab className="fab-button" onClick={submitNote}><AddIcon/></Fab>
+                </Zoom>
             </form>
         </div>
     )

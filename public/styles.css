@@ -9,6 +9,7 @@ html {
 body {
   background: #eee;
   padding: 0 16px;
+  background-image: url("https://www.transparenttextures.com/patterns/climpek.png");
 }
 
 
@@ -62,6 +63,7 @@ footer p {
   float: right;
   margin-right: 10px;
   color: #ff6ebe;
+  background-color: white;
   border: none;
   width: 36px;
   height: 36px;
@@ -101,4 +103,8 @@ form.create-note button {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   outline: none;
+}
+
+.pushed{
+  padding-left: 10px;
 }
